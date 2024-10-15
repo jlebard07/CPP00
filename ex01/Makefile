@@ -1,16 +1,16 @@
-$(NAME) = ex01
-$(G++) = g++
-$(CPPFLAGS) = -Wall -Wextra -Werror -std=c++98
-$(SRC) = 
-$(OBJ) = $(SRC:.cpp=.o)
+NAME = ex01
+G++ = g++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+SRC = ./Contact/Contact.cpp ./PhoneBook/PhoneBook.cpp ./main.cpp 
+OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
-$(OBJ) : $(SRC)
-	$(G++) $(CPPFLAGS) -c $(SRC) -o $(OBJ)
+%.o : %.cpp
+	$(G++) $(CPPFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-	$(G++) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	$(G++) $(CPPFLAGS) $^ -o $@
 
 clean :
 	rm -f $(OBJ)
