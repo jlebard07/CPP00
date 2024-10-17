@@ -6,7 +6,9 @@
 int main(){
 	std::string str;
 	PhoneBook dir;
+	bool		ctrl;
 
+	ctrl = false;
 	while (1)
 	{
 		std::cout << "Please enter a valid command : ";
@@ -46,21 +48,19 @@ int main(){
 			{
 				std::string input_index;
 				int		index;
-				int		ctrl;
 				
 				if (dir.get_nbr() == 0){
 					std::cout << "No contact has been loaded." << std::endl;
 					break ;
 				}
 				index = -1;
-				ctrl = 0;
 				if (ctrl == 0)
 					std::cout << "Enter an index :";
 				std::cin >> input_index;
 				std::istringstream iss(input_index);
 				if (index < 0 || !iss >> index || !iss.eof() || dir.one_contact(index) == 0){
 					std::cout << "Please enter a valid index :";
-					ctrl++;
+					ctrl = true;
 				}
 				else
 					break ;
