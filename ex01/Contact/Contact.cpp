@@ -1,23 +1,23 @@
 #include "Contact.hpp"
 
 std::string	Contact::get_first_name() const{
-	return first_name.empty() ? "" : first_name;
+	return first_name;
 }
 
 std::string	Contact::get_last_name() const{
-	return last_name.empty() ? "" : last_name;
+	return last_name;
 }
 
 std::string	Contact::get_nickname() const{
-	return nickname.empty() ? "" : nickname;
+	return nickname;
 }
 
 std::string	Contact::get_phone() const{
-	return phone_number.empty() ? "" : phone_number;
+	return phone_number;
 }
 
 std::string	Contact::get_darkest_secret() const{
-	return darkest_secret.empty() ? "" : darkest_secret;
+	return darkest_secret;
 }
 
 void	Contact::set_first_name(std::string str){

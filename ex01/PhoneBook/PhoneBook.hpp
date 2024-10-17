@@ -6,7 +6,10 @@
 class PhoneBook{
 public :
 	PhoneBook();
+	int		get_nbr();
 	void	add_user(Contact& contact);
+	void	display_contact_list();
+	bool	one_contact(int	n);
 
 private :
 	int count, to_replace;
