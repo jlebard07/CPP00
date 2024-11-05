@@ -58,7 +58,8 @@ int main(){
 					std::cout << "Enter an index :";
 				std::cin >> input_index;
 				std::istringstream iss(input_index);
-				if (index < 0 || !iss >> index || !iss.eof() || dir.one_contact(index) == 0){
+				iss >> index;
+				if (index < 0 || !iss.eof() || dir.one_contact(index) == 0){
 					std::cout << "Please enter a valid index :";
 					ctrl = true;
 				}
